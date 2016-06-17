@@ -15,6 +15,9 @@ extern class Modiqus
     @:native('linc::modiqus::start')
     static function start() : Int;
 
+    @:native('linc::modiqus::stop')
+    static function stop() : Void;
+
     //inline functions can be used as wrappers
     //and can be useful to juggle haxe typing to or from the c++ extern
 

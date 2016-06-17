@@ -8,24 +8,41 @@ namespace linc
 {
     namespace modiqus 
     {
-    	mq::mqCore* _core;
+    	mq::mqCsoundWrapper* _csound;
 
-	    mq::mqCore* core() 
+	    mq::mqCsoundWrapper* csound() 
 	    {        	
-        	if (_core == NULL)
+        	if (_csound == NULL)
         	{
-				_core = new mq::mqCore();
+				_csound = new mq::mqCsoundWrapper();
         	}
 
-            return _core; 
+            return _csound; 
         }
 
         void start() 
         {
+        	// bool blah = csound()->start();
 
-        	core()->Start(mq::ENGINE_MODE_GAME);
-			core()->getCsoundWrapper()->setChannelControlInput(1.0f, "2.000100.NoteAmplitude");
-			core()->getCsoundWrapper()->setChannelControlInput(1.0f, "2.000100.GrainDensity");        	
+            if (!csound()->start())
+            {
+                MQ_LOG_FATAL("Modiqus engine failed initialization")
+                csound()->stop();
+                exit(EXIT_FAILURE);
+            }
+            else
+            {
+                // MQ_LOG_INFO( "Modiqus engine initialized")
+            }
+
+            csound()->sendMessage("i1 0 1");
+
+            while(1);
+        }
+
+        void stop()
+        {
+            csound()->stop();
         }
     }
 }

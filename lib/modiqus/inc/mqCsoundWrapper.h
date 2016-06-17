@@ -25,6 +25,48 @@
 
 namespace mq
 {
+    struct mqTable
+    {
+        S32 number;
+        S32 start;
+        S32 size;
+        S32 GENRoutine;
+
+        mqTable();
+
+        void reset();
+    };
+
+    struct mqSampleTable : public mqTable
+    {
+        mq_str filcod;
+        F32 skiptime;
+        S32 format;
+        S32 channel;
+
+        mqSampleTable();
+
+        void reset();
+    };
+
+    struct mqImmediateTable : public mqTable
+    {
+        S32List tableNums;
+
+        mqImmediateTable();
+
+        void reset();
+    };
+
+    struct mqSegmentTable : public mqTable
+    {
+        SegmentList segments;
+        
+        mqSegmentTable();
+        
+        void reset();
+    };
+
     struct CsoundState
     {
         CSOUND* csound;
@@ -41,6 +83,9 @@ namespace mq
         
         bool start();
         void stop();
+        void setOpcodePath(mq_str path);
+        void setAudioPath(mq_str path);
+        void setCsdPath(mq_str path);
         void getChannelControlOutput(MYFLT& value, const char *name) const;
         void setChannelControlInput(MYFLT value, const char *name) const;
         void setControlChannelInput(MYFLT value, const char *name) const;
@@ -57,7 +102,7 @@ namespace mq
         const S32 getSampleRate() const;
         const S32 getControlRate() const;
         const S32 getNumberOfControlSamples() const;
-        const F32 getControlPeriodDuration() const;
+        const F32 getControlPeriod() const;
         bool isPerformanceThreadRunning() const;
         void isPerformanceThreadRunning(bool running);
         
@@ -65,7 +110,7 @@ namespace mq
         
         CsoundState _state;
         volatile bool _performanceThreadRunning;
-        F32 _ksmpsDuration;
+//        F32 _ksmpsDuration;
         
     };
 }

@@ -1,11 +1,11 @@
 #/bin/sh
 
-
 cd ..
 
 ROOT_DIR=$PWD
 BUILD_DIR=$ROOT_DIR/test/cpp
 LIB_DIR=$BUILD_DIR/Frameworks
+RESOURCES_DIR=$BUILD_DIR/Resources
 
 echo Root dir : $ROOT_DIR
 echo Build dir : $BUILD_DIR
@@ -17,8 +17,15 @@ rm -rfv $LIB_DIR
 fi
 
 mkdir $LIB_DIR
-
 cp -R lib/csound/ $LIB_DIR/
+
+if [ -d $RESOURCES_DIR ]
+then
+rm -rfv $RESOURCES_DIR
+fi
+
+mkdir $RESOURCES_DIR
+cp -R resources/csound $RESOURCES_DIR
 
 cd $BUILD_DIR
 

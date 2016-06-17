@@ -10,6 +10,7 @@ namespace linc
     namespace modiqus 
     {
         extern void start();
+        extern void stop();        
     }
 }
 
