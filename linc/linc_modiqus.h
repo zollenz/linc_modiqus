@@ -9,7 +9,7 @@ namespace linc
 {
     namespace modiqus 
     {
-        extern void start();
+        extern void start(bool bundle);
         extern void stop();        
     }
 }

@@ -20,11 +20,11 @@ namespace linc
             return _csound; 
         }
 
-        void start() 
+        void start(bool bundle) 
         {
         	// bool blah = csound()->start();
 
-            if (!csound()->start())
+            if (!csound()->start(bundle))
             {
                 MQ_LOG_FATAL("Modiqus engine failed initialization")
                 csound()->stop();

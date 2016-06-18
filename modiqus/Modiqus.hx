@@ -13,7 +13,7 @@ extern class Modiqus
     //and the header for the lib included in linc_modiqus.h
 
     @:native('linc::modiqus::start')
-    static function start() : Int;
+    static function start(bundle:Bool) : Int;
 
     @:native('linc::modiqus::stop')
     static function stop() : Void;

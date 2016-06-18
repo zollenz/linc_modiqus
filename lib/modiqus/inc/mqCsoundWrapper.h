@@ -81,7 +81,7 @@ namespace mq
         
     public:
         
-        bool start();
+        bool start(bool bundle);
         void stop();
         void setOpcodePath(mq_str path);
         void setAudioPath(mq_str path);

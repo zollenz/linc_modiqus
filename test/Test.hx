@@ -2,7 +2,7 @@ class Test
 {   
     static function main() 
     {
-        modiqus.Modiqus.start();
+        modiqus.Modiqus.start(false);
         modiqus.Modiqus.stop();
     }
 }
