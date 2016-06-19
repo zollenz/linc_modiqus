@@ -32,17 +32,18 @@ namespace linc
             }
             else
             {
-                // MQ_LOG_INFO( "Modiqus engine initialized")
+                MQ_LOG_INFO( "Modiqus engine initialized")
             }
-
-            csound()->sendMessage("i1 0 1");
-
-            while(1);
         }
 
         void stop()
         {
             csound()->stop();
+        }
+
+        void test()
+        {
+            csound()->sendMessage("i1 0 1");
         }
     }
 }
