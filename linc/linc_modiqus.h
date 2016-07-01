@@ -12,7 +12,8 @@ namespace linc
         extern void start(bool bundle);
         extern void stop();
         extern void test();
-        extern void sendMessage(const char* message);     
+        extern void sendMessage(const char* message);
+        extern void setControlChannel(const char* channel, float value);
     }
 }
 

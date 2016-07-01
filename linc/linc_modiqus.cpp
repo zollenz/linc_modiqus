@@ -50,5 +50,10 @@ namespace linc
         {
             csound()->sendMessage(message); 
         }
+
+        void setControlChannel(const char* channel, float value)
+        {
+            csound()->setChannelControlInput(value, channel);
+        }
     }
 }

@@ -24,6 +24,9 @@ extern class Modiqus
     @:native('linc::modiqus::sendMessage')
     static function sendMessage(message:String) : Void;
 
+    @:native('linc::modiqus::setControlChannel')
+    static function setControlChannel(channel:String, value:Float) : Void;
+
     //inline functions can be used as wrappers
     //and can be useful to juggle haxe typing to or from the c++ extern
 
