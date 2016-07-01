@@ -21,6 +21,9 @@ extern class Modiqus
     @:native('linc::modiqus::test')
     static function test() : Void;
 
+    @:native('linc::modiqus::sendMessage')
+    static function sendMessage(message:String) : Void;
+
     //inline functions can be used as wrappers
     //and can be useful to juggle haxe typing to or from the c++ extern
 

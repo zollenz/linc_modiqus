@@ -22,7 +22,7 @@ nchnls = 2
 giSine          ftgen 1, 0, 4096, 10, 1
 
 instr 1
-asound oscili 0.5, 440, 1
+asound oscili p4, p5, 1
 outs asound,asound
 endin
 

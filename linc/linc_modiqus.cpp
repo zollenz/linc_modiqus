@@ -43,7 +43,12 @@ namespace linc
 
         void test()
         {
-            csound()->sendMessage("i1 0 1");
+            csound()->sendMessage("i1 0 1 0.5 440");
+        }
+
+        void sendMessage(const char* message)
+        {
+            csound()->sendMessage(message); 
         }
     }
 }
