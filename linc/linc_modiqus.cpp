@@ -2,7 +2,7 @@
 
 #include <hxcpp.h>
 
-mq::S32 mq::dbgLevel = MQ_LOG_LEVEL_DEBUG;
+mq::S32 mq::dbgLevel = MQ_LOG_LEVEL_MUTE;
 
 namespace linc 
 {
