@@ -2,8 +2,6 @@
 
 #include <hxcpp.h>
 
-mq::S32 mq::dbgLevel = MQ_LOG_LEVEL_MUTE;
-
 namespace linc 
 {
     namespace modiqus 
@@ -23,6 +21,8 @@ namespace linc
         void start(bool bundle) 
         {
         	// bool blah = csound()->start();
+
+            mq::set_log_level(MQ_LOG_LEVEL_INFO);
 
             if (!csound()->start(bundle))
             {
