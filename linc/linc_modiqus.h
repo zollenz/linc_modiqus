@@ -9,6 +9,8 @@ namespace linc
 {
     namespace modiqus 
     {
+        extern void set_log_level(int level);
+        extern void start();
         extern void start(bool bundle);
         extern void stop();
         extern void test();

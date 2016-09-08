@@ -12,6 +12,9 @@ extern class Modiqus
     //can be wrapped in linc::libname or call directly
     //and the header for the lib included in linc_modiqus.h
 
+    @:native('linc::modiqus::set_log_level')
+    static function set_log_level(level:LogLevel) : Void;
+
     @:native('linc::modiqus::start')
     static function start(bundle:Bool) : Int;
 
@@ -43,3 +46,16 @@ extern class Modiqus
         return _internal_start();
     }
 }
+
+@:enum
+abstract LogLevel(Int)
+from Int to Int 
+{
+    var MQ_LOG_LEVEL_MUTE   = 1;
+    var MQ_LOG_LEVEL_FATAL  = 2;
+    var MQ_LOG_LEVEL_ERROR  = 3;
+    var MQ_LOG_LEVEL_WARN   = 4;
+    var MQ_LOG_LEVEL_INFO   = 5;
+    var MQ_LOG_LEVEL_DEBUG  = 6;
+}
+

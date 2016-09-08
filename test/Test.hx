@@ -2,8 +2,8 @@ class Test
 {   
     static function main() 
     {
+        modiqus.Modiqus.set_log_level(MQ_LOG_LEVEL_DEBUG);
         modiqus.Modiqus.start(false);
-		// modiqus.Modiqus.test();
 
 		modiqus.Modiqus.setControlChannel('1.000001.NoteAmplitude', 0.9);
 		modiqus.Modiqus.setControlChannel('1.000002.NoteAmplitude', 0.9);
@@ -14,9 +14,7 @@ class Test
 		modiqus.Modiqus.sendMessage("i1.000003 0 1 0.5 329.63");
 
         while(true) {};
-
-
-        
-        modiqus.Modiqus.stop();
+                
+        // modiqus.Modiqus.stop();
     }
 }

@@ -7,7 +7,9 @@
         <!-- add files and flags to the haxe c++ build -->
 
         <compilerflag value='-I${LINC_MODIQUS_PATH}/linc/'/>
-        <compilerflag value='-I${LINC_MODIQUS_PATH}/lib/csound/inc'/>
+        <compilerflag value='-I${LINC_MODIQUS_PATH}/lib/csound/inc'/>        
+        <compilerflag value='-I${LINC_MODIQUS_PATH}/lib/modiqus/inc'/>
+        <compilerflag value='-mmacosx-version-min=10.7'/>
 
         <file name='${LINC_MODIQUS_PATH}linc/linc_modiqus.cpp' />
 
@@ -18,10 +20,8 @@
         <!-- add linker flags to the haxe build output -->
 
         <section if="mac">
-            <!-- <flag value="-F${LINC_MODIQUS_PATH}lib/csound" /> -->
             <lib name='${LINC_MODIQUS_PATH}lib/csound/lib/CsoundLib64'/>            
             <lib name='${LINC_MODIQUS_PATH}lib/modiqus/lib/libmodiqus.a'/>
-<!--             <vflag name='-framework' value='CsoundLib' />             -->
         </section>
 
     </target>

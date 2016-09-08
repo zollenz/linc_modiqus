@@ -18,12 +18,13 @@ namespace linc
             return _csound; 
         }
 
+        void set_log_level(int level) 
+        {   
+            csound()->set_log_level(level);
+        }
+
         void start(bool bundle) 
         {
-        	// bool blah = csound()->start();
-
-            mq::set_log_level(MQ_LOG_LEVEL_INFO);
-
             if (!csound()->start(bundle))
             {
                 MQ_LOG_FATAL("Modiqus engine failed initialization")
